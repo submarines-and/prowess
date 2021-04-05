@@ -1,7 +1,7 @@
 local addonName, namespace = ...
 
--- Map of which animal has which spells
--- The few creatures that know more than one spell are listed where I first found them in the source data
+-- Map of which creature knows which ability.
+-- The few creatures that know more than one spell are listed where I first found them in the source data.
 namespace.database = {
 
     -- Bite 1

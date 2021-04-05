@@ -19,7 +19,7 @@ Addon that shows tooltip info if your mouseover target has a learnable pet abili
 ## Where is the rest?
 There is no way I am copy/pasting spell- and creature ids for things that I have no intention of using. If you have spare time and want to get carpel tunnel syndrome, feel free to update `database.lua` with any missing abilities. 
 
-Sorry!! :)
+Sorry! :)
 
 __To add a new ability__
 * Find your ability [here](https://www.wow-petopia.com/classic/abilities.php).
@@ -28,12 +28,12 @@ __To add a new ability__
 
 
 ## Localization
-Do you speak another language? Help adding display names in `database.lua`. See english values for example and default names.
+Do you speak another language? Help adding display names in `database.lua`. See english values for example and default names. Example below for german translations. Currently, there is no fallback mechanism, so each language needs to support all strings or `nil` will be shown.
 
     namespace.displayNames = {
 
-        -- Also default
         ["deDE"] = {
             ["17253"] = "Name of Bite 1 in German"
         }
+
     }
