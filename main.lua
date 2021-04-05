@@ -23,7 +23,7 @@ GameTooltip:SetScript("OnTooltipSetUnit", function(...)
         for index, spellId in ipairs(abilities) do
 
             -- Check if player already knows spell
-            if not IsSpellKnown(spellId) then
+            if not IsSpellKnown(spellId, true) then
                 GameTooltip:AddLine(namespace.displayNames[spellId], 1, 1, 1)
             end
 

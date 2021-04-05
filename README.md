@@ -1,5 +1,12 @@
 # Prowess
-Addon that shows tooltip info if your mouseover target has a learnable pet ability. To install, download this repository, rename the folder `prowess`, and move to your `interface/addons` directory.
+Addon that shows tooltip info if your mouseover target has a learnable pet ability. If your pet is summoned and already knows the ability, it will be hidden from the tooltip. I have not found a way to check if the hunter knows the ability (but has not taught the pet). If you know how to do this, please let me know.
+
+
+## Installing
+* Download this repository.
+* Rename the folder `prowess`. Remember to remove any excessive folders; there should only be one folder containing all the files.
+* Move to your `interface/addons` directory.
+* Restart your game to load the addon.
 
 
 ## Supported abilities
