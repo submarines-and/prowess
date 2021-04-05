@@ -19,12 +19,21 @@ local function AddAvailableAbilitiesToTooltip(...)
 
         -- Blank line
         GameTooltip:AddLine(" ", 1, 1, 1)
+        local locale = GetLocale()
+
+        -- Prefer translated version of display name, but fallback to english
+        local displayNames = namespace.displayNames[locale]
+        if not displayNames then
+            displayNames = namespace.displayNames["enUS"]
+        end
 
         for index, spellId in ipairs(abilities) do
 
             -- Check if player already knows spell
             if not IsSpellKnown(spellId, true) then
-                GameTooltip:AddLine(namespace.displayNames[spellId], 1, 1, 1)
+
+                local displayName = displayNames[spellId]
+                GameTooltip:AddLine(displayName, 1, 1, 1)
             end
 
         end
