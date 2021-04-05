@@ -229,6 +229,7 @@ namespace.displayNames = {
 
     -- Also default
     ["enUS"] = {
+
         -- Bite
         ["17253"] = "Bite 1",
         ["17255"] = "Bite 2",
@@ -259,4 +260,5 @@ namespace.displayNames = {
         ["24452"] = "Prowl 2",
         ["24453"] = "Prowl 3"
     }
+
 }
