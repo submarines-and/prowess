@@ -28,7 +28,7 @@ __To add a new ability__
 
 
 ## Localization
-Do you speak another language? Help adding display names in `database.lua`. See english values for example and default names. Example below for german translations. Currently, there is no fallback mechanism, so each language needs to support all strings or `nil` will be shown.
+Do you speak another language? Help adding display names in `database.lua`. See english values for example and default names. Example below for german translations. If a language is missing a string, English will be used as fallback.
 
     namespace.displayNames = {
 
