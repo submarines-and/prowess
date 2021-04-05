@@ -25,16 +25,27 @@ local function AddAvailableAbilitiesToTooltip(...)
         -- Blank line
         GameTooltip:AddLine(" ", 1, 1, 1)
 
-        for index, spellId in ipairs(abilities) do
+        for index, abilityId in ipairs(abilities) do
 
-            -- Check if player already knows spell
-            if not IsSpellKnown(spellId, true) then
+            -- Check if pet knows ability (or any previous ranks)
+            local abilityIsKnown = IsSpellKnown(abilityId, true)
+            local previousRanks = namespace.ranks[abilityId]
+            if previousRanks then
+                for index, previousRank in ipairs(previousRanks) do
+                    if IsSpellKnown(previousRank, true) then
+                        abilityIsKnown = true
+                    end
+                end
+            end
+
+            -- Only add tooltip if your pet does not the ability
+            if not abilityIsKnown then
 
                 -- If the display name has not been translated, fallback to English (which will have all translations).
-                local displayNameToShow = displayNames[spellId]
+                local displayNameToShow = displayNames[abilityId]
                 if not displayNameToShow then
                     displayNameToShow =
-                        namespace.displayNames[englishLocaleKey][spellId]
+                        namespace.displayNames[englishLocaleKey][abilityId]
                 end
 
                 GameTooltip:AddLine(displayNameToShow, 1, 1, 1)
