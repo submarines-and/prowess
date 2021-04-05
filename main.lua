@@ -10,13 +10,26 @@ GameTooltip:SetScript("OnTooltipSetUnit", function(...)
     local type, zero, serverId, instanceId, zoneUid, npcId, spawnUid =
         strsplit("-", guid);
 
-    -- Check database for a match
-    local ability = namespace.database[npcId]
+    -- Check database for a match.
+    -- This will return a list, because a creature can know several abilities.
+    local abilities = namespace.database[npcId]
 
-    -- If match found, add to tooltip
-    if ability then GameTooltip:AddLine(ability, 1, 1, 1) end
+    -- If match found, add tooltip for each ability known.
+    if abilities then
+
+        -- Blank line
+        GameTooltip:AddLine(" ", 1, 1, 1)
+
+        for index, spellId in ipairs(abilities) do
+
+            -- Check if player already knows spell
+            if not IsSpellKnown(spellId) then
+                GameTooltip:AddLine(namespace.displayNames[spellId], 1, 1, 1)
+            end
+
+        end
+    end
 
     -- Invoke any pre-existing functionality
     if existingFunction then return existingFunction(...) end
 end)
-
