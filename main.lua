@@ -3,7 +3,7 @@ local addonName, namespace = ...
 -- Preserve any existing functionality
 local existingFunction = GameTooltip:GetScript("OnTooltipSetUnit")
 
-GameTooltip:SetScript("OnTooltipSetUnit", function(...)
+local function AddAvailableAbilitiesToTooltip(...)
 
     -- Get ID of whatever is under the cursor
     local guid = UnitGUID("mouseover")
@@ -32,4 +32,10 @@ GameTooltip:SetScript("OnTooltipSetUnit", function(...)
 
     -- Invoke any pre-existing functionality
     if existingFunction then return existingFunction(...) end
-end)
+end
+
+-- Only register addon listener if player class is hunter
+local localizedClass, englishClass, classIndex = UnitClass("player");
+if classIndex == 3 then
+    GameTooltip:SetScript("OnTooltipSetUnit", AddAvailableAbilitiesToTooltip)
+end
