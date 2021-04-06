@@ -48,6 +48,12 @@ local function AddAvailableAbilitiesToTooltip(...)
                         namespace.displayNames[defaultLocaleKey][abilityId]
                 end
 
+                -- Still no name?
+                -- Then it is missing from the localization file. 
+                if not displayNameToShow then
+                    displayNameToShow = namespace.strings.unknownAbility
+                end
+
                 GameTooltip:AddLine(displayNameToShow, 1, 1, 1)
             end
 

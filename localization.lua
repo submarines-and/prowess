@@ -123,3 +123,10 @@ namespace.displayNames = {
     ["zhTW"] = {}
 
 }
+
+-- Other strings
+namespace.strings = {
+
+    -- When ability has no matching display name in the localization file. 
+    unknownAbility = "Unknown ability"
+}
