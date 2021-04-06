@@ -49,38 +49,41 @@ local function AddAvailableAbilitiesToTooltip(...)
 
     -- Get ID of whatever is under the cursor
     local guid = UnitGUID("mouseover")
-    local type, zero, serverId, instanceId, zoneUid, npcId, spawnUid =
-        strsplit("-", guid);
 
-    -- Check database for a match.
-    -- This will return a list, because a creature can know several abilities.
-    local abilities = namespace.database[npcId]
+    if guid then
+        local type, zero, serverId, instanceId, zoneUid, npcId, spawnUid =
+            strsplit("-", guid);
 
-    -- If match found, add tooltip for each ability known.
-    if abilities then
+        -- Check database for a match.
+        -- This will return a list, because a creature can know several abilities.
+        local abilities = namespace.database[npcId]
 
-        -- Blank line
-        GameTooltip:AddLine(" ", 1, 1, 1)
+        -- If match found, add tooltip for each ability known.
+        if abilities then
 
-        for index, abilityId in ipairs(abilities) do
+            -- Blank line
+            GameTooltip:AddLine(" ", 1, 1, 1)
 
-            -- Check if pet knows ability (or any previous ranks)
-            local abilityIsKnown = IsSpellKnown(abilityId, true)
-            local previousRanks = namespace.ranks[abilityId]
-            if previousRanks then
-                for index, previousRank in ipairs(previousRanks) do
-                    if IsSpellKnown(previousRank, true) then
-                        abilityIsKnown = true
+            for index, abilityId in ipairs(abilities) do
+
+                -- Check if pet knows ability (or any previous ranks)
+                local abilityIsKnown = IsSpellKnown(abilityId, true)
+                local previousRanks = namespace.ranks[abilityId]
+                if previousRanks then
+                    for index, previousRank in ipairs(previousRanks) do
+                        if IsSpellKnown(previousRank, true) then
+                            abilityIsKnown = true
+                        end
                     end
                 end
-            end
 
-            -- Only add tooltip if your pet does not the ability
-            if not abilityIsKnown then
-                local displayNameToShow = getDisplayName(abilityId)
-                GameTooltip:AddLine(displayNameToShow, 1, 1, 1)
-            end
+                -- Only add tooltip if your pet does not the ability
+                if not abilityIsKnown then
+                    local displayNameToShow = getDisplayName(abilityId)
+                    GameTooltip:AddLine(displayNameToShow, 1, 1, 1)
+                end
 
+            end
         end
     end
 
