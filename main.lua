@@ -51,12 +51,12 @@ local function AddAvailableAbilitiesToTooltip(...)
 
             for index, abilityId in ipairs(abilities) do
 
-                -- Check if pet knows ability (or any previous ranks)
-                local abilityIsKnown = IsSpellKnown(abilityId, true)
-                local previousRanks = namespace.ranks[abilityId]
-                if previousRanks then
-                    for index, previousRank in ipairs(previousRanks) do
-                        if IsSpellKnown(previousRank, true) then
+                -- Check if pet knows ability (or any subsequent ranks)
+                local abilityIsKnown = false
+                local ranksToCheck = namespace.ranks[abilityId]
+                if ranksToCheck then
+                    for index, rank in ipairs(ranksToCheck) do
+                        if IsSpellKnown(rank, true) then
                             abilityIsKnown = true
                         end
                     end
