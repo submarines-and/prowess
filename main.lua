@@ -1,9 +1,9 @@
 local addonName, namespace = ...
 
 -- Pick locale for display names. English is used as fallback.
-local englishLocaleKey = "enUS"
+local defaultLocaleKey = "enUS"
 local displayNames = namespace.displayNames[GetLocale()]
-if not displayNames then displayNames = namespace.displayNames[englishLocaleKey] end
+if not displayNames then displayNames = namespace.displayNames[defaultLocaleKey] end
 
 -- Preserve any existing functionality
 local existingFunction = GameTooltip:GetScript("OnTooltipSetUnit")
@@ -45,7 +45,7 @@ local function AddAvailableAbilitiesToTooltip(...)
                 local displayNameToShow = displayNames[abilityId]
                 if not displayNameToShow then
                     displayNameToShow =
-                        namespace.displayNames[englishLocaleKey][abilityId]
+                        namespace.displayNames[defaultLocaleKey][abilityId]
                 end
 
                 GameTooltip:AddLine(displayNameToShow, 1, 1, 1)
