@@ -3,6 +3,7 @@ Addon that shows tooltip info if your mouseover target has a learnable pet abili
 
 If your pet is summoned and already knows the ability (or a previous rank), it will be hidden from the tooltip. I have not found a way to check if the hunter knows the ability (but has not taught the pet). If you know how to do this, please let me know.
 
+![Tooltip in action](./screenshot.png)
 
 ## Installing
 * Download this repository.
