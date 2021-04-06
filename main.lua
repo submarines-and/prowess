@@ -2,10 +2,46 @@ local addonName, namespace = ...
 
 -- Pick locale for display names. English is used as fallback.
 local defaultLocaleKey = "enUS"
-local displayNames = namespace.displayNames[GetLocale()]
-if not displayNames then displayNames = namespace.displayNames[defaultLocaleKey] end
 
--- Preserve any existing functionality
+-- Get a generic string in local language
+local function getString(key)
+    local strings = namespace.strings[GetLocale()]
+    if not strings then strings = namespace.strings[defaultLocaleKey] end
+
+    local stringToShow = string[key]
+
+    if not stringToShow then
+        stringToShow = namespace.string[defaultLocaleKey][key]
+    end
+
+    return stringToShow
+end
+
+-- Get a display name in local language (or English as fallback)
+local function getDisplayName(key)
+    local displayNames = namespace.displayNames[GetLocale()]
+    if not displayNames then
+        displayNames = namespace.displayNames[defaultLocaleKey]
+    end
+
+    local displayNameToShow = displayNames[key]
+
+    -- If the display name has not been translated, fallback to English (which will have all translations).
+    if not displayNameToShow then
+        displayNameToShow = namespace.displayNames[defaultLocaleKey][key]
+    end
+
+    -- Still no name?
+    -- Then it is missing from the localization file. 
+    if not displayNameToShow then
+        displayNameToShow = getString("unknownAbility")
+    end
+
+    return displayNameToShow
+end
+
+-- Preserve any existing functionality concerning tooltips
+-- This can be functionality from other addons which should not be overwritten.
 local existingFunction = GameTooltip:GetScript("OnTooltipSetUnit")
 
 local function AddAvailableAbilitiesToTooltip(...)
@@ -40,20 +76,7 @@ local function AddAvailableAbilitiesToTooltip(...)
 
             -- Only add tooltip if your pet does not the ability
             if not abilityIsKnown then
-
-                -- If the display name has not been translated, fallback to English (which will have all translations).
-                local displayNameToShow = displayNames[abilityId]
-                if not displayNameToShow then
-                    displayNameToShow =
-                        namespace.displayNames[defaultLocaleKey][abilityId]
-                end
-
-                -- Still no name?
-                -- Then it is missing from the localization file. 
-                if not displayNameToShow then
-                    displayNameToShow = namespace.strings.unknownAbility
-                end
-
+                local displayNameToShow = getDisplayName(abilityId)
                 GameTooltip:AddLine(displayNameToShow, 1, 1, 1)
             end
 

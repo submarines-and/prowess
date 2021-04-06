@@ -3,7 +3,7 @@ local addonName, namespace = ...
 -- Display names for abilities
 namespace.displayNames = {
 
-    -- Also default
+    -- English: Also default
     ["enUS"] = {
 
         -- Bite
@@ -127,6 +127,40 @@ namespace.displayNames = {
 -- Other strings
 namespace.strings = {
 
-    -- When ability has no matching display name in the localization file. 
-    unknownAbility = "Unknown ability"
+    -- English: Also default
+    ["enUS"] = {
+
+        -- When ability has no matching display name in the localization file. 
+        unknownAbility = "Unknown ability"
+    },
+
+    -- German
+    ["deDE"] = {},
+
+    -- Spanish (Spain)
+    ["esES"] = {},
+
+    -- Spanish (Mexico)
+    ["esMX"] = {},
+
+    -- French
+    ["frFR"] = {},
+
+    -- Italian
+    ["itIT"] = {},
+
+    -- Korean
+    ["koKR"] = {},
+
+    -- Portugese (Brazil)
+    ["ptBR"] = {},
+
+    -- Russian
+    ["ruRU"] = {},
+
+    -- Chinese (China)
+    ["zhCN"] = {},
+
+    -- Chinese (Taiwan)
+    ["zhTW"] = {}
 }
