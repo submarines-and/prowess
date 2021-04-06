@@ -44,6 +44,7 @@ end
 -- This can be functionality from other addons which should not be overwritten.
 local existingFunction = GameTooltip:GetScript("OnTooltipSetUnit")
 
+-- Main function
 local function AddAvailableAbilitiesToTooltip(...)
 
     -- Get ID of whatever is under the cursor
