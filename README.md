@@ -1,5 +1,5 @@
 # Prowess
-Addon that shows tooltip info if your mouseover target has a learnable pet ability. If your pet is summoned and already knows the ability, it will be hidden from the tooltip. I have not found a way to check if the hunter knows the ability (but has not taught the pet). If you know how to do this, please let me know.
+Addon that shows tooltip info if your mouseover target has a learnable pet ability. If your pet is summoned and already knows the ability or a previous rank, it will be hidden from the tooltip. I have not found a way to check if the hunter knows the ability (but has not taught the pet). If you know how to do this, please let me know.
 
 
 ## Installing
@@ -24,11 +24,11 @@ Sorry! :)
 __To add a new ability__
 * Find your ability [here](https://www.wow-petopia.com/classic/abilities.php).
 * Map id of all creatures that know your spell to the spell id in `database.lua`.
-* Add display name if missing.
+* Add display name if missing to `localization.lua`.
 
 
 ## Localization
-Do you speak another language? Help adding display names in `database.lua`. See english values for example and default names. Example below for german translations. If a language is missing a string, English will be used as fallback.
+Do you speak another language? Help by adding display names in `localization.lua`.  See the example below for a German translations. If a language is missing data for a particular string, English will be used as a fallback, providing a mixed, but functional experience.
 
     namespace.displayNames = {
 
