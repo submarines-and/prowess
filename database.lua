@@ -291,6 +291,36 @@ namespace.displayNames = {
         ["24450"] = "Prowl 1",
         ["24452"] = "Prowl 2",
         ["24453"] = "Prowl 3"
-    }
+    },
+
+    -- German
+    ["deDE"] = {},
+
+    -- Spanish (Spain)
+    ["esES"] = {},
+
+    -- Spanish (Mexico)
+    ["esMX"] = {},
+
+    -- French
+    ["frFR"] = {},
+
+    -- Italian
+    ["itIT"] = {},
+
+    -- Korean
+    ["koKR"] = {},
+
+    -- Portugese (Brazil)
+    ["ptBR"] = {},
+
+    -- Russian
+    ["ruRU"] = {},
+
+    -- Chinese (China)
+    ["zhCN"] = {},
+
+    -- Chinese (Taiwan)
+    ["zhTW"] = {}
 
 }
