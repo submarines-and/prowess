@@ -1,24 +1,10 @@
 local addonName, namespace = ...
 
--- Pick locale for display names. English is used as fallback.
-local defaultLocaleKey = "enUS"
-
--- Get a generic string in local language
-local function getString(key)
-    local strings = namespace.strings[GetLocale()]
-    if not strings then strings = namespace.strings[defaultLocaleKey] end
-
-    local stringToShow = string[key]
-
-    if not stringToShow then
-        stringToShow = namespace.string[defaultLocaleKey][key]
-    end
-
-    return stringToShow
-end
-
 -- Get a display name in local language (or English as fallback)
 local function getDisplayName(key)
+    local defaultLocaleKey = "enUS"
+
+    -- Pick locale for display names. English is used as fallback.
     local displayNames = namespace.displayNames[GetLocale()]
     if not displayNames then
         displayNames = namespace.displayNames[defaultLocaleKey]
@@ -33,9 +19,8 @@ local function getDisplayName(key)
 
     -- Still no name?
     -- Then it is missing from the localization file. 
-    if not displayNameToShow then
-        displayNameToShow = getString("unknownAbility")
-    end
+    -- This will only happen due to typos in the localization- or database files, so I won'b bother to localize these.
+    if not displayNameToShow then displayNameToShow = "UNKNOWN" end
 
     return displayNameToShow
 end
