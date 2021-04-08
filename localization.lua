@@ -15,6 +15,7 @@ namespace.displayNames = {
         ["17259"] = "Bite 6",
         ["17260"] = "Bite 7",
         ["17261"] = "Bite 8",
+        ["27050"] = "Bite 9",
 
         -- Charge
         ["7371"] = "Charge 1",
@@ -33,6 +34,10 @@ namespace.displayNames = {
         ["16832"] = "Claw 6",
         ["3010"] = "Claw 7",
         ["3009"] = "Claw 8",
+        ["27049"] = "Claw 9",
+
+        -- Cobra reflexes 
+        ["25076"] = "Cobra reflexes",
 
         -- Cower
         ["1742"] = "Cower 1",
