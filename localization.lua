@@ -101,7 +101,10 @@ namespace.displayNames = {
         -- Thunderstomp
         ["26090"] = "Thunderstomp 1",
         ["26187"] = "Thunderstomp 2",
-        ["26188"] = "Thunderstomp 3"
+        ["26188"] = "Thunderstomp 3",
+
+        -- Warp
+        ["35346"] = "Warp"
     },
 
     -- German
