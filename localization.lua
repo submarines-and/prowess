@@ -76,6 +76,11 @@ namespace.displayNames = {
         ["25011"] = "Lightning Breath 5",
         ["25012"] = "Lightning Breath 6",
 
+        -- Poison Spit
+        ["35387"] = "Poison Spit 1",
+        ["35389"] = "Poison Spit 2",
+        ["35392"] = "Poison Spit 3",
+
         -- Prowl
         ["24450"] = "Prowl 1",
         ["24452"] = "Prowl 2",
