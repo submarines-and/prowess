@@ -46,6 +46,7 @@ namespace.displayNames = {
         ["1755"] = "Cower 4",
         ["1756"] = "Cower 5",
         ["16697"] = "Cower 6",
+        ["27048"] = "Cower 7",
 
         -- Dash
         ["23099"] = "Dash 1",
