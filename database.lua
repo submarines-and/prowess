@@ -119,7 +119,7 @@ namespace.database = {
 
     -- Bite 9
     ["18467"] = {"27050"},
-    ["21956"] = {"27050"},
+    ["21956"] = {"27050", "24597"},
     ["20634"] = {"27050", "23110", "23148"},
 
     -- Charge 1
@@ -378,6 +378,10 @@ namespace.database = {
 
     -- Furious Howl 4
     -- All creatures are found earlier in the list
+    ["18476"] = {"24597"},
+    ["18033"] = {"24597"},
+    ["20058"] = {"24597"},
+    ["20330"] = {"24597"},
 
     -- Lightning Breath 1
     -- No training source
@@ -407,6 +411,11 @@ namespace.database = {
 
     -- Lightning Breath 6
     ["11357"] = {"25012"},
+    ["11359"] = {"25012"},
+    ["20749"] = {"25012"},
+    ["21123"] = {"25012"},
+    ["19428"] = {"25012"},
+    ["20673"] = {"25012"},
 
     -- Prowl 1
     ["2406"] = {"24450"},
@@ -414,8 +423,9 @@ namespace.database = {
     ["768"] = {"24450"},
 
     -- Prowl 2
-    -- Prowl 3
+    -- Prowl 3   
     -- All creatures are found earlier in the list
+    -- [""] = {"24453"},
 
     -- Scorpid Poison 1
     ["3226"] = {"24640"},
