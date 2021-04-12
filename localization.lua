@@ -86,12 +86,14 @@ namespace.displayNames = {
         ["24583"] = "Scorpid Poison 2",
         ["24586"] = "Scorpid Poison 3",
         ["24587"] = "Scorpid Poison 4",
+        ["27060"] = "Scorpid Poison 5",
 
         -- Screech
         ["24423"] = "Screech 1",
         ["24577"] = "Screech 2",
         ["24578"] = "Screech 3",
         ["24579"] = "Screech 4",
+        ["27051"] = "Screech 5",
 
         -- Shell Shield
         ["26064"] = "Screech 1",
