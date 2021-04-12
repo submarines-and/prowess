@@ -58,6 +58,10 @@ namespace.displayNames = {
         ["23147"] = "Dive 2",
         ["23148"] = "Dive 3",
 
+        -- Fire Breath
+        ["34889"] = "Fire Breath 1",
+        ["35323"] = "Fire Breath 2",
+
         -- Furious Howl
         ["24604"] = "Furious Howl 1",
         ["24605"] = "Furious Howl 2",
